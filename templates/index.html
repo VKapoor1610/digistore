@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+{% if message  %}
+    <div class="alert alert-secondary" role="alert">
+        <p style="margin-top: 25px;">{{ message }}</p>
+    </div>
+{% endif %}
+
+<br><br><br><br>
+<div class="container">
+    <div><center>
+        
+<form class="card p-5 w-75 bg-white text-left" action="" method="post">
+    <div class="card-body profile-card pt-1 d-flex flex-column align-items-center">
+
+        <h2 style="color: rgb(9, 9, 119); font-weight: bold;">Create an Account</h2>
+        </div>
+    
+  <div class="form-group">
+        <label for="Fullname"><b>Name of Owner</b></label>
+        <input name="fullname" class="form-control" id="inputFullName" aria-describedby="emailHelp" placeholder="Enter full name">
+        <small id="fullName" class="form-text text-muted">Please enter your full name(First name and Last name)</small>
+  </div>
+
+  <div class="form-group">
+        <label for="InputEmail" class="font-weight-bold">Email address</label>
+        <input name="email" class="form-control" id="InputEmail"  placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+  <!-- name of shop -->
+  <div class="form-group">
+        <label for="InputShopName" class="font-weight-bold">Enter Shop Name</label>
+        <input name="ShopName" class="form-control" id="InputShopName"  placeholder="Enter Name of Shop">
+  </div>
+
+  <!-- type of shop -->
+  <div class="form-group">
+        <label for="InputType" class="font-weight-bold">Type of Shop</label>
+        <input name="typeOfShop" class="form-control" id="InputType"  placeholder="Enter Type of Shop">
+  </div>
+
+  <!-- location -->
+  <div class="form-group">
+        <label for="InputLoc" class="font-weight-bold">Address of Shop</label>
+        <input name="location" class="form-control" id="InputLoc"  placeholder="Enter Address of Shop">
+  </div>
+
+  <!-- Registration number -->
+  <div class="form-group">
+        <label for="InputReg" class="font-weight-bold">Registration Number of Shop</label>
+        <input name="reg" class="form-control" id="InputReg"  placeholder="Enter Registration Number of Shop">
+  </div>
+
+  <!-- username -->
+  <div class="form-group">
+        <label for="InputUser" class="font-weight-bold">Username</label>
+        <input name="username" class="form-control" id="InputUser"  placeholder="Enter your Username">
+  </div>
+
+  <div class="form-group">
+    <label for="InputPassword" class="font-weight-bold">Password</label>
+    <input type="password" name="password1" class="form-control" id="InputPassword" placeholder="Create a Password">
+  </div>
+
+    <div class="form-group">
+    <label for="InputPassword2" class="font-weight-bold">Confirm Password</label>
+    <input type="password" name="password2" class="form-control" id="InputPassword2" placeholder="Enter your Password again">
+
+    </div>
+    <br>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form></center>
+</div>
+<center><h6>Already have an account? <a href="/shopkeeper_login">Login</a> here.</h6></center><br><br></div>
+
+
+{% endblock %}
+
+

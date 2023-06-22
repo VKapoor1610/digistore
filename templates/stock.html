@@ -1,0 +1,358 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<style>
+  .container {
+    overflow: hidden
+  }
+
+  .ct {
+    border-radius: 5px;
+
+    padding: 0px;
+  }
+
+  .tab {
+    float: left;
+  }
+
+  .tab-2 {
+    margin-left: 50px
+  }
+
+  .tab-2 input {
+    display: block;
+    margin-bottom: 10px
+  }
+
+  tr {
+    transition: all .25s ease-in-out
+  }
+
+  tr:hover {
+    background-color: #EEE;
+    cursor: pointer
+  }
+
+  input[type=text],
+  select {
+    width: 90%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+
+
+  }
+
+  input[type=number],
+  select {
+    width: 90%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+
+  }
+
+  label {
+
+    color: black;
+
+  }
+
+  .button1 {
+    background-color: #2d9f46;
+    border-radius: 6px;
+
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button2 {
+    background-color: #2d429f;
+    border-radius: 6px;
+
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button3 {
+    background-color: #cd1717;
+    border-radius: 6px;
+
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .trt {
+
+    text-align: left;
+  }
+</style>
+
+<body>
+  <main id="main" class="main">
+    <div class="pamounttitle">
+      <h1>Dues</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Stock Available</li>
+        </ol>
+      </nav>
+    </div><!-- End Pamount Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Current Stock in Shop</h5>
+              <table class="table table-striped" id="mytable">
+
+                <tr>
+                  <th>Item Id</th>
+                  <th>Name of Item</th>
+                  <th>Quantity</th>
+                  <th>Brand</th>
+                  <th>Cost Price</th>
+                  <th>Selling Price</th>
+                </tr>
+
+                {% for todo in msg %}
+                <tr>
+                    <td>{{todo['itemId']}}</td>
+                    <td>{{todo['name']}}</td>
+                    <td>{{todo['quantity']}}</td>
+                    <td>{{todo['brand']}}</td>
+                    <td>{{todo['cp']}}</td>
+                    <td>{{todo['sp']}}</td>
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title" align="center">Add Your Dues Here</h5>
+              <div class="tab tab-2">
+                <div class="ct" background-color: #f2f2f2>
+
+                  <form action="" method="post">
+                    
+                    <label for="exampleInputEmail1"><b>Item Id</b></label>
+                    <input name="itemId" type="itemId"  id="itemId" aria-describedby="itemID">
+              
+                    <label for="name"><b>Name of Item</b> </label>
+                    <input name="name" type="name"  id="name" aria-describedby="name">
+            
+
+                    <label for="quantity"><b>Quantity</b> </label>
+                    <input name="quantity" type="quantity"  id="quantity">
+              
+
+                
+                    <label for="brand"><b>Brand</b> </label>
+                    <input name="brand" type="brand" id="brand">
+                
+
+                
+                    <label for="cp"><b>Cost Price</b> </label>
+                    <input name="cp" type="cp" id="cp">
+                
+
+
+                    <label for="sp"> <b>Selling Price</b></label>
+                    <input name="sp" type="sp" id="sp">
+                    
+
+                    <label for="act"><b>Type of Action</b></label>
+                    <input type="act" id="act" name="act" placeholder="">
+
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+  <script>
+    
+
+    var rIndex,
+    table = document.getElementById("mytable");
+
+    // check the empty input
+    function checkEmptyInput() {
+        var isEmpty = false,
+        name = document.getElementById("name").value,
+        itemId = document.getElementById("itemId").value,
+        quantity = document.getElementById("quantity").value;
+        brand = document.getElementById("brand").value;
+        cp = document.getElementById("cp").value;
+        sp = document.getElementById("sp").value;
+
+        if (name === "") {
+          alert("Enter name");
+          isEmpty = true;
+        }
+        else if (itemId === "") {
+          alert("Enter Item Id");
+          isEmpty = true;
+        }
+        else if (quantity === "") {
+          alert("Quantity Connot Be Empty");
+          isEmpty = true;
+        }
+        else if (brand === "") {
+          alert("Brand Connot Be Empty");
+          isEmpty = true;
+        }
+        else if (cp === "") {
+          alert("Cost Price Connot Be Empty");
+          isEmpty = true;
+        }
+        else if (sp === "") {
+          alert("Selling Price Connot Be Empty");
+          isEmpty = true;
+        }
+        return isEmpty;
+    }
+
+    // add Row
+    function addHtmlTableRow() {
+
+      if (!checkEmptyInput()) {
+          var newRow = table.insertRow(table.length),
+          cell1 = newRow.insertCell(0),
+          cell2 = newRow.insertCell(1),
+          cell3 = newRow.insertCell(2),
+          cell4 = newRow.insertCell(3),
+          cell5 = newRow.insertCell(4),
+          cell6 = newRow.insertCell(5),
+
+          name = document.getElementById("name").value,
+          quantity = document.getElementById("quantity").value,
+          itemId = document.getElementById("itemId").value;
+          brand = document.getElementById("brand").value;
+          cp = document.getElementById("cp").value;
+          sp = document.getElementById("sp").value;
+
+          cell1.innerHTML = itemId;
+          cell2.innerHTML = name;
+          cell3.innerHTML = quantity;
+          cell4.innerHTML = brand;
+          cell5.innerHTML = cp;
+          cell6.innerHTML = sp;
+
+      }
+    }
+
+    // display selected row data into input text
+    function selectedRowToInput() {
+      for (var i = 1; i < table.rows.length; i++) {
+          table.rows[i].onclick = function () {
+          // get the selected row index
+          rIndex = this.rowIndex;
+          document.getElementById("itemId").value = this.cells[0].innerHTML;
+          document.getElementById("name").value = this.cells[1].innerHTML;
+          document.getElementById("quantity").value = this.cells[2].innerHTML;
+          document.getElementById("brand").value = this.cells[3].innerHTML;
+          document.getElementById("cp").value = this.cells[4].innerHTML;
+          document.getElementById("sp").value = this.cells[5].innerHTML;
+        };
+      }
+    }
+    selectedRowToInput();
+
+    function editHtmlTbleSelectedRow() {
+          var name = document.getElementById("name").value;
+          var quantity = document.getElementById("quantity").value;
+          var itemId = document.getElementById("itemId").value;
+          var brand = document.getElementById("brand").value;
+          var cp = document.getElementById("cp").value;
+          var sp = document.getElementById("sp").value;
+
+        if (!checkEmptyInput()) {
+          table.rows[rIndex].cells[0].innerHTML = itemId;
+          table.rows[rIndex].cells[1].innerHTML = name;
+          table.rows[rIndex].cells[2].innerHTML = quantity;
+          table.rows[rIndex].cells[3].innerHTML = brand;
+          table.rows[rIndex].cells[4].innerHTML = cp;
+          table.rows[rIndex].cells[5].innerHTML = sp;
+        }
+    }
+
+    function removeSelectedRow() {
+        table.deleteRow(rIndex);
+        // clear input text
+        document.getElementById("name").value = "";
+        document.getElementById("itemId").value = "";
+        document.getElementById("cp").value = "";
+        document.getElementById("sp").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("brand").value = "";
+    }
+
+    function utility(){
+        var op = document.getElementById("act").value
+
+        if(op=="add") {
+          addHtmlTableRow();
+        }
+
+        if(op=="update"){
+          editHtmlTbleSelectedRow();
+        }
+
+        if(op=="delete"){
+          removeSelectedRow(); 
+        }
+
+        else checkEmptyInput();
+    }
+
+  </script>
+</body>
+</html>
+{% endblock %}

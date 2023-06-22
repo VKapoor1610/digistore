@@ -1,0 +1,89 @@
+{% extends 'layout_customer.html' %}
+
+{% block body %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    .button1 {
+    background-color: #308b44;
+    border-radius: 6px;
+
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  .button2 {
+    background-color: rgb(207, 82, 82);
+    border-radius: 6px;
+
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+</style>
+<body>
+    <main class="main" id="main">
+        <div class="pagetitle">
+            <h1>My Cart</h1>
+            
+          </div><!-- End Page Title -->
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-2">
+                <div class="card">
+                    <div class="card-horizontal">
+                        <div class="card img">
+                            <img class="col-8" src="../static/img/images.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Janasya Women's Blue Poly Georgette Floral Flared Western Dress</h4>
+                            <p class="card-text">Size: M</p>
+                            <p class="card-text">Qty: 1</p>
+
+                            <button class="button1">Buy Now</button>
+                            <button class="button2">Remove</button>                            
+                        </div>
+                    </div>                                         
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-2">
+                <div class="card">
+                    <div class="card-horizontal">
+                        <div class="card img">
+                            <img class="col-8" src="../static/img/pant.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Trousers</h4>
+                            <p class="card-text">Size: M</p>
+                            <p class="card-text">Qty: 1</p>
+
+                            <button class="button1">Buy Now</button>
+                            <button class="button2">Remove</button>                            
+                        </div>
+                    </div>                                         
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+
+<br>
+{% endblock %}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8">
+
+
+  <title>{% block title %}{%endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+<!-- Vendor CSS Files -->
+<link href="{{ url_for('static', filename='vendor/quill/quill.bubble.css')}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/simple-datatables/style.css')}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='vendor/quill/quill.snow.css')}}" rel="stylesheet">
+
+
+<!-- Template Main CSS File -->
+<link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+</head>
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="headr d-none d-lg-block ">DigiStore</span>
+      </a>
+      
+    </div><!-- End Logo -->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-icon" href="/shopkeeper_signup" >
+            <div style="font-size: medium; font-weight: bold;">SignUp</div>
+          </a><!-- End Notification Icon -->
+
+        </li><!-- End Notification Nav -->
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-icon" href="/shopkeeper_login" >
+            <div style="font-size: medium;; font-weight: bold; ">Login</div>
+            
+          </a><!-- End Notification Icon -->
+
+        </li><!-- End Notification Nav -->
+        
+        <li class="nav-item dropdown">
+
+        </li><!-- End Notification Nav -->
+        
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+<!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Registration Form</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Register <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/login">Login</a>
+      <a class="nav-item nav-link" href="/logout">Logout</a>
+    </div>
+  </div>
+</nav> -->
+
+{% block content %}{% endblock %}
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<script src="{{ url_for('static', filename='vendor/apexcharts/apexcharts.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/simple-datatables/simple-datatables.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/tinymce/tinymce.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/php-email-form/validate.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/quill/quill.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/echarts/echarts.min.js')}}"></script>
+<script src="{{ url_for('static', filename='assets/vendor/chart.js/chart.umd.js')}}"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<!-- Template Main JS File -->
+<script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+
+
+</body>
+
+</html>
